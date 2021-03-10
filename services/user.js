@@ -1,32 +1,34 @@
 const { userArray } = require("../models");
-const { v4: uuid } = require("uuid");
+const { v4: uuidv4 } = require("uuid");
 
 
 const addNewUser = (data) => {
-    userArray.push({ ...data, id: uuid()}) 
-}
+    userArray.push({ ...data, id: uuidv4() }); 
+};
+
+const getSingleUserById = (id) => userArray.find((el) => el.id === id);
+
+const getSingleUserByEmail = (email) => userArray.find((el) => el.email === email);
+
+const getUserIndex = (id) => userArray.findIndex((el) => el.id === id);
 
 const updateUserProfile = (data, id) => {
-    const userDetails = userArray.find((el) => el.id === id);
+    const userDetails = getSingleUserById(id);
     const updatedProfile = { ...userDetails, ...data }; 
-    const index = userArray.findIndex((el) => el.id === id);
-    userDetails[index] = user = updatedProfile;
+    const index = getUserIndex(id);
+    userDetails[index] = updatedProfile;
     return updatedProfile;
-} 
-
-const getSingleUserById = (id) => userArray.find((el) => el.email === email);
-
-const getSingleUserByEmail = (email) => userArray.find((el) => el.id === id);
+};
 
 const deleteUser = (id) => {
-    const index = userArray.findIndex((el) => el.id === id);
+    const index = getUserIndex(id);
     return userArray.splice(index, 1);
 }
 
 module.exports = {
     addNewUser,
-    updateUserProfile,
-    getSingleUserByEmail,
-    getSingleUserById,
     deleteUser,
+    updateUserProfile,
+    getSingleUserById,
+    getSingleUserByEmail,
 }
