@@ -1,21 +1,25 @@
 const {
-    addNewUser,
-    getSingleUserById,
-    getSingleUserByEmail,
-    deleteUser,
-    updateUserProfile,
-} = require("./user");
+  addNewUser,
+  getSingleUserById,
+  getSingleUserByEmail,
+  deleteUser,
+  updateUserProfile,
+} = require('./user');
 
-const { addNewTodo, getSingleTodo, updateTodo, deleteTodo } = require("./todo");
+const {
+  addNewTodo, getSingleTodo, updateTodo, deleteTodo, getAllTodos, getAllTodosForSingleUser,
+} = require('./todo');
 
 module.exports = {
-    addNewUser,
-    getSingleUserById,
-    getSingleUserByEmail,
-    deleteUser,
-    updateUserProfile,
-    addNewTodo,
-    getSingleTodo,
-    updateTodo,
-    deleteTodo,
+  addNewUser,
+  getSingleUserById,
+  getSingleUserByEmail,
+  deleteUser,
+  updateUserProfile,
+  addNewTodo,
+  getSingleTodo,
+  updateTodo,
+  deleteTodo,
+  getAllTodos,
+  getAllTodosForSingleUser,
 };

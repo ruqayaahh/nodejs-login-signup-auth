@@ -1,14 +1,19 @@
- const {
-    checkIfUserExists,
-    validateLogin,
-    validateSignup,
- } = require("./user");
+const {
+  checkIfUserExists,
+  validateLogin,
+  validateSignup,
+} = require('./user');
 
- const { validateAddNewTodo } = require("./todo");
+const { validateAddNewTodo, checkIfTodoExists, verifyOwner } = require('./todo');
 
- module.exports = {
-   checkIfUserExists,
-   validateLogin,
-   validateSignup,
-   validateAddNewTodo,
- }
+const { authenticate } = require('./auth');
+
+module.exports = {
+  checkIfUserExists,
+  validateLogin,
+  validateSignup,
+  validateAddNewTodo,
+  checkIfTodoExists,
+  authenticate,
+  verifyOwner,
+};

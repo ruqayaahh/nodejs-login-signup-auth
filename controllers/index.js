@@ -1,8 +1,18 @@
-const { loginUser, registerUser } = require("./user");
-const { addTodo } = require("./todo");
+const { loginUser, registerUser } = require('./user');
+const {
+  createTodo,
+  editTodo,
+  deleteAtodo,
+  allTodos,
+  getTodo,
+} = require('./todo');
 
 module.exports = {
-    loginUser,
-    registerUser,
-    addTodo,
+  loginUser,
+  registerUser,
+  createTodo,
+  editTodo,
+  deleteAtodo,
+  allTodos,
+  getTodo,
 };
