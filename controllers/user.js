@@ -23,7 +23,7 @@ const loginUser = (req, res) => {
     const user = getSingleUserByEmail(email);
 
     if (user && user.password === password) {
-      const token = addDataToToken({ email });
+      const token = addDataToToken({ email, isAdmin: user.isAdmin });
       return res.status(200).json({
         status: 'success',
         message: 'Login successful',

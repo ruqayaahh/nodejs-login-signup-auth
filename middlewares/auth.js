@@ -20,27 +20,6 @@ const authenticate = (req, res, next) => {
   }
 };
 
-// const authtoTodoOwner = (req, res, next) => {
-//   try {
-//     console.log(req.user.email);
-//     const token = req.headers.authorization.split(' ')[1];
-//     if (!token) {
-//       return res.status(401).json({
-//         status: 'Fail',
-//         message: 'Unauthorized! Sign in to view your todos.',
-//       });
-//     }
-//     req.user = verifyToken(token);
-//     return next();
-//   } catch (error) {
-//     return res.status(500).json({
-//       status: 'Fail',
-//       message: 'Something broke',
-//     });
-//   }
-// };
-
 module.exports = {
   authenticate,
-  // authtoTodoOwner,
 };
